@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Tienda.Models.Clientes>
+<h4>Listado de Clientes</h4>
+<hr />
+
+<table class="table table-bordered table-hover table-responsive">
+    <thead>
+        <th>Rut Cliente</th>
+        <th>Nombre </th>
+        <th>Apellido</th>
+        <th>Dirección</th>
+        <th>Tipo Cliente</th>
+        <th colspan="2">Action</th>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => cliente.Rut_cliente)</td>
+                <td>@Html.DisplayFor(m => cliente.Nombre)</td>
+                <td>@Html.DisplayFor(m => cliente.Apellido)</td>
+                <td>@Html.DisplayFor(m => cliente.Direccion)</td>
+                <td>@Html.DisplayFor(m => cliente.Tipo_cliente)</td>
+                <td>@Html.ActionLink("Ver Ficha", "Ficha", new { Rut_cliente = cliente.Rut_cliente })</td>
+                <td>@Html.ActionLink("Quitar", "Eliminar", new { Rut_cliente = cliente.Rut_cliente })</td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>
+

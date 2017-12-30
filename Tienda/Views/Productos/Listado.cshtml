@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Tienda.Models.Productos>
+
+<h4>Listado de Productos</h4>
+<hr />
+
+<table class="table table-bordered table-hover table-responsive">
+    <thead>
+    <th>Id Producto</th>
+    <th>Nombre Producto</th>
+    <th>Codigo de barra</th>
+    <th>Familia</th>
+    <th>Precio</th>
+    <th>Descuento Tope</th>
+    <th>Descripción</th>
+    <th colspan="2">Action</th>
+    </thead>
+    <tbody>
+        @foreach (var producto in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => producto.Id_producto)</td>
+                <td>@Html.DisplayFor(m => producto.Nombre_producto)</td>
+                <td>@Html.DisplayFor(m => producto.Codigo_barra)</td>
+                <td>@Html.DisplayFor(m => producto.Familia)</td>
+                <td>@Html.DisplayFor(m => producto.Precio)</td>
+                <td>@Html.DisplayFor(m => producto.Descuento_tope)</td>
+                <td>@Html.DisplayFor(m => producto.Descripcion)</td>
+                <td>@Html.ActionLink("Ver Ficha", "Ficha", new { Id_producto = producto.Id_producto })</td>
+                <td>@Html.ActionLink("Quitar", "Eliminar", new { Id_producto = producto.Id_producto })</td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>

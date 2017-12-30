@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ExamenModelStoreContainer" CdmEntityContainer="ExamenEntities">
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="ExamenModel.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="rut_cliente" ColumnName="rut_cliente" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="tipo_cliente" ColumnName="tipo_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="ExamenModel.Productos">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="nombre_producto" ColumnName="nombre_producto" />
+          <ScalarProperty Name="codigo_barra" ColumnName="codigo_barra" />
+          <ScalarProperty Name="familia" ColumnName="familia" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="descuento_tope" ColumnName="descuento_tope" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

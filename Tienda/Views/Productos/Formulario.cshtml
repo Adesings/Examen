@@ -1,0 +1,83 @@
+﻿
+<h2> Formulario de Ingreso Productos</h2>
+
+<fieldset>
+    <legend></legend>
+    @using (@Html.BeginForm("Guardar", "Productos", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <div class="form-group">
+            <span class="col-md-2">
+                Id_Producto:
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("id_producto", null, new { @class = "form-control", placeholder = "ingresa un codigo" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Nombre:
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("nombre_producto", null, new { @class = "form-control", placeholder="ingresa un nombre" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Codigo de barra:
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("codigo_barra", null, new { @class = "form-control", placeholder = "ingresa un codigo de barra" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Familia:
+            </span>
+            <span class="col-md-6">
+                @Html.DropDownList("familia", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="Abarrotes", Value="Abarrotes"},
+                        new SelectListItem{Text="Aseo y Limpieza", Value="Aseo y Limpieza"},
+                        new SelectListItem{Text="Carnes", Value="Carnes"},
+                        new SelectListItem{Text="Lacteos", Value="Lacteos"},
+                        new SelectListItem{Text="Frutas y Verduras", Value="Frutas y Verduras"},
+                        new SelectListItem{Text="Rotiseria", Value="Rotiseria"}
+                    },
+                    "Seleccione una Familia",
+                    new { @class = "form-control" }
+                    )
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+               Precio:
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("precio", null, new { @class = "form-control", placeholder="ingresa un precio" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Descuento Tope:
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("descuento_tope", null, new { @class = "form-control", placeholder = "ingresa un descuento" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Descripción:
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("descripcion", null, new { @class = "form-control", placeholder = "describe el producto" })
+            </span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Enviar formulario</button>
+        </div>
+
+    }
+
+</fieldset>
+

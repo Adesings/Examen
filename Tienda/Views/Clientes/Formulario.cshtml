@@ -1,0 +1,66 @@
+﻿
+<h2> Ingreso Clientes</h2>
+
+<fieldset>
+    <legend></legend>
+    @using (@Html.BeginForm("Guardar", "Clientes", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+
+        <div class="form-group">
+            <span class="col-md-2">
+                Rut Cliente:
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("rut_cliente", null, new { @class = "form-control", placeholder = "ingresa un rut" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Nombre Cliente:
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("nombre", null, new { @class = "form-control", placeholder = "ingresa un nombre" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Apellido Cliente:
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("apellido", null, new { @class = "form-control", placeholder = "ingresa un apellido" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Dirección:
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("direccion", null, new { @class = "form-control", placeholder = "ingresa una dirección" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Tipo Cliente:
+            </span>
+            <span class="col-md-6">
+                @Html.DropDownList("tipo_cliente", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="Contado", Value="Contado"},
+                        new SelectListItem{Text="Efectivo", Value="Efectivo"},
+                        new SelectListItem{Text="Credito", Value="Credito"},
+                        new SelectListItem{Text="Documentado", Value="Documentado"}
+                    },
+                    "Selecciona Tipo de Cliente",
+                    new { @class = "form-control" }
+                    )
+            </span>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Enviar formulario</button>
+        </div>
+
+    }
+
+</fieldset>
+
